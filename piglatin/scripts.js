@@ -2,13 +2,14 @@ function pigLatin(string){
   var splitArr = string.toLowerCase().split('');
   var vowel = ['a', 'e', 'i', 'o', 'u'];
 
-  for(i=0;i<string.length;i++){
-    // console.log('in for loop');
     if (vowel.includes(splitArr[0])){
-    }
+    console.log(splitArr.join('')+"ay");
   }
-  console.log(splitArr.join('')+"ay");
+    else if(!vowel.includes(splitArr[0])){
+      console.log('starts with consonant');
 
+      
+    }
 }
 
 $(document).ready(function(){
@@ -16,7 +17,10 @@ $(document).ready(function(){
     event.preventDefault();
     var str = $('#userInput').val();
 
+    if (!isNaN(str)){
+      console.log('is a number')
+    } else {
     pigLatin(str);
-
+    }
   });
 });
